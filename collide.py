@@ -13,7 +13,7 @@ import math
 import operator
 
 import euclid
-import obj
+# import obj # import unused??
 from functools import reduce
 
 class ConvexPolygon(object):

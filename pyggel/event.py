@@ -26,7 +26,7 @@ class Keyboard(object):
 
     def get_ident(self, event):
         try:
-            return str(event.str)
+            return str(event)
         except:
             return event.str
 

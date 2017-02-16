@@ -285,6 +285,7 @@ class World:
         self.deleteGrid()
         x1,y1,z1 = lower
         x2,y2,z2 = upper
+        step = int(step)
         for xx in range(x1,x2,step):
             gridline = pyggel.geometry.Lines((xx,0,x1),(xx,0,x2),colorize=(0.1,0.1,0.1))
             self.scene.add_3d(gridline)
