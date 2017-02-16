@@ -5,9 +5,9 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The scene module contains classes used to represent an entire group of renderable objects.
 """
 
-from include import *
-import camera, view, misc
-from light import all_lights
+from .include import *
+from . import camera, view, misc
+from .light import all_lights
 
 class Tree(object):
     """A simple class used to keep track of all objects in a scene."""

@@ -5,12 +5,12 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The light module contains a basic light class that interfaces with the OpenGL Light(s).
 """
 
-from include import *
-import math3d, camera
+from .include import *
+from . import math3d, camera
 
 all_lights = []
-for i in xrange(8):
-    exec "all_lights.append(GL_LIGHT%s)"%i
+for i in range(8):
+    exec("all_lights.append(GL_LIGHT%s)"%i)
 
 class Light(object):
     """A simple 3d light"""

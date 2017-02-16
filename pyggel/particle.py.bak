@@ -6,13 +6,13 @@ The particle module contains classes for creating and rendering particle effects
 A simple fire effect is included.
 """
 
-from .include import *
-from . import data, image, misc, data
+from include import *
+import data, image, misc, data
 
 import random
 import numpy
 
-from .misc import randfloat
+from misc import randfloat
 
 class Particle3D(object):
     """A simple 3d particle."""
@@ -133,7 +133,7 @@ class Fire3D(Behavior3D):
     get_dimensions.__doc__ = Behavior3D.get_dimensions.__doc__
 
     def emitter_update(self):
-        for i in range(5):
+        for i in xrange(5):
             self.emitter.particle_type(self.emitter, self)
     emitter_update.__doc__ = Behavior3D.emitter_update.__doc__
 
@@ -329,7 +329,7 @@ class FirePoint(BehaviorPoint):
     get_dimensions.__doc__ = BehaviorPoint.get_dimensions.__doc__
 
     def emitter_update(self):
-        for i in range(5):
+        for i in xrange(5):
             self.emitter.particle_type(self.emitter, self)
     emitter_update.__doc__ = BehaviorPoint.emitter_update.__doc__
 

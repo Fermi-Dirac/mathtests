@@ -5,8 +5,8 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The font module contains classes to display text images.
 """
 
-from include import *
-import image, view, data, misc
+from .include import *
+from . import image, view, data, misc
 
 class Font3D(object):
     """A font object used for rendering text to images"""

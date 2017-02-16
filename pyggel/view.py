@@ -9,7 +9,7 @@ and changing of the screen window and OpenGL states.
 from OpenGL import error
 oglError = error
 
-from include import *
+from .include import *
 
 class _Screen(object):
     """A simple object to store screen settings."""
@@ -321,4 +321,4 @@ def clear_screen(scene=None):
 def require_init():
     """Called if a function requires the view to have been init'd - raises TypeError if not."""
     if not screen.have_init:
-        raise TypeError, "view must be init'd before this action can occur (pyggel.init or pyggel.view.init)"
+        raise TypeError("view must be init'd before this action can occur (pyggel.init or pyggel.view.init)")

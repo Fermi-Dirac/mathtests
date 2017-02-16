@@ -5,8 +5,8 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The misc module contains various functions and classes that don't fit anywhere else.
 """
 
-from .include import *
-from . import view, math3d, data
+from include import *
+import view, math3d, data
 
 import random
 
@@ -98,7 +98,7 @@ def test_safe(filename, acceptable_functions=[]):
 
     #remove anything that isn't a function call
     ok = []
-    for i in range(len(new)):
+    for i in xrange(len(new)):
         if new[i] == "(":
             last = new[i-1].split()[-1].split(".")[-1]
             if last == "(" or True in [last.endswith(__i) for __i in (", ", ",", ": ", ":","=")]:

@@ -6,7 +6,7 @@ The camera module defines a Base camera class other cameras should inherit from,
 LookFromCamera - which is basically a FPS camera,
 and the LookAtCamera - which is basically a third-person camera
 """
-from include import *
+from .include import *
 import numpy
 from math import sqrt
 

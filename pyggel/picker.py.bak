@@ -5,7 +5,7 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The picker module contains functions and classes to assist in selecting which 3d object(s) the mouse is over.
 """
 
-from .include import *
+from include import *
 
 def Pick512Objects(x, y, objs, camera):
     """Figure out which object in a list of up to 512 objects are selected.
@@ -85,7 +85,7 @@ class Group(object):
             self.all_objs.remove(obj)
             self.all_names.remove(name)
         except:
-            print("!@#!@#@#")
+            print "!@#!@#@#"
 
     def pick(self, mouse_pos, camera=None):
         """Run Pick512Objects(mouse_pos[0], mouse_pos[1], self.objects, camera) and return results."""

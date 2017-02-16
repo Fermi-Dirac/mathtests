@@ -6,8 +6,8 @@ The data module holds all classes used to create, store and access OpenGL data,
 like textures, display lists and vertex arrays.
 """
 
-from .include import *
-from . import view
+from include import *
+import view
 
 class Texture(object):
     """An object to load and store an OpenGL texture"""

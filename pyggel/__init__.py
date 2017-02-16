@@ -4,11 +4,11 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 """
 
 PYGGEL_VERSION = "0.075-alpha3b"
-from include import *
+from .include import *
 
-import mesh, view, image, camera, math3d, light
-import scene, font, geometry, misc, data
-import particle, event, gui
+from . import mesh, view, image, camera, math3d, light
+from . import scene, font, geometry, misc, data
+from . import particle, event, gui
 
 def quit():
     """Deinitialize PYGGEL..."""

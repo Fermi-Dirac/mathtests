@@ -5,9 +5,9 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The mesh module contains mesh classes for different kinds of meshes, as well as loaders for various kinds of meshes.
 """
 
-from .include import *
+from include import *
 import os
-from . import image, view, data, misc
+import image, view, data, misc
  
 def OBJ(filename, pos=(0,0,0),
         rotation=(0,0,0), colorize=(1,1,1,1)):
@@ -25,13 +25,13 @@ def OBJ(filename, pos=(0,0,0),
         values = line.split()
         if not values: continue
         if values[0] == 'v':
-            v = list(map(float, values[1:4]))
+            v = map(float, values[1:4])
             svertices.append(v)
         elif values[0] == 'vn':
-            v = list(map(float, values[1:4]))
+            v = map(float, values[1:4])
             snormals.append(v)
         elif values[0] == 'vt':
-            stexcoords.append(list(map(float, values[1:3])))
+            stexcoords.append(map(float, values[1:3]))
         elif values[0] in ('usemtl', 'usemat'):
             material = values[1]
         elif values[0] == 'mtllib':
@@ -46,12 +46,12 @@ def OBJ(filename, pos=(0,0,0),
                     smtl[values[1]] = None
                     mtl = values[1]
                 elif mtl is None:
-                    raise ValueError("mtl file doesn't start with newmtl stmt")
+                    raise ValueError, "mtl file doesn't start with newmtl stmt"
                 elif values[0] == 'map_Kd':
                     tex = data.Texture(os.path.join(path, values[1]))
                     smtl[mtl] = tex
                 elif values[0]=="Kd":
-                    tex = data.BlankTexture(color=list(map(float, values[1:])))
+                    tex = data.BlankTexture(color=map(float, values[1:]))
                     smtl[mtl] = tex
         elif values[0] == 'f':
             face = []
@@ -91,7 +91,7 @@ def OBJ(filename, pos=(0,0,0),
         for face in sfaces:
             vertices, normals, texture_coords, _m = face
             glBegin(GL_POLYGON)
-            for i in range(len(vertices)):
+            for i in xrange(len(vertices)):
                 if normals[i] > 0:
                     glNormal3fv(snormals[normals[i] - 1])
                 if texture_coords[i] > 0:

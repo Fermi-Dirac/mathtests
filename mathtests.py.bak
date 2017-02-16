@@ -931,7 +931,7 @@ class World:
         ball1 = self.models[model]
         rx1,ry1,rz1 = ball1.getRotation()
         for n in self.tempmodels:
-            if n != model:
+            if n <> model:
                 ball2 = self.models[n]
                 rx2,ry2,rz2 = ball2.getRotation()
                 d = self.getDistance(ball1.getPosition(),ball2.getPosition())

@@ -167,7 +167,7 @@ class Vector(object):
         """Return whether this Vector is not at the same position as other Vector"""
         return not self == other
 
-    def __nonzero__(self):
+    def __bool__(self):
         """Return whether this Vector is not at (0,0,0)"""
         return self != Vector((0,0,0))
 

@@ -14,6 +14,7 @@ import operator
 
 import euclid
 import obj
+from functools import reduce
 
 class ConvexPolygon(object):
     __slots__ = ['plane', 'edge_planes', 'point', 'aabbox']

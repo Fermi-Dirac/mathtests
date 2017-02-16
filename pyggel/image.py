@@ -6,11 +6,11 @@ The image module contains classes to load and render both 2d and 3d (billboarded
 """
 import time
 
-from include import *
+from .include import *
 
-import view, data, misc
+from . import view, data, misc
 
-import Image as pilImage
+from . import Image as pilImage
 
 class Image(object):
     """A 2d image object"""
@@ -299,7 +299,7 @@ class Image3D(Image):
         glPopMatrix()
 
     def blit(self, *args, **kwargs):
-        print "Image3D does not support this function!"
+        print("Image3D does not support this function!")
 
     clear_blits = blit
     remove_blit = blit
@@ -620,7 +620,7 @@ class Animation3D(Animation):
         self.outline_color=(1,0,0)
 
     def blit(self, *args, **kwargs):
-        print "Animation3D does not support this function!"
+        print("Animation3D does not support this function!")
 
     clear_blits = blit
     remove_blit = blit
@@ -897,8 +897,8 @@ def GridSpriteSheet(filename, frames=(1,1), duration=100,
     x_size = int(image.get_width() / frames[0])
     y_size = int(image.get_height() / frames[1])
 
-    for x in xrange(frames[0]):
-        for y in xrange(frames[1]):
+    for x in range(frames[0]):
+        for y in range(frames[1]):
             new.append([Image(image.subsurface(x*x_size, y*y_size, x_size, y_size)),
                         duration*0.001])
     return Animation(new, pos, rotation, scale, colorize)
@@ -922,8 +922,8 @@ def GridSpriteSheet3D(filename, frames=(1,1), duration=100,
     x_size = int(image.get_width() / frames[0])
     y_size = int(image.get_height() / frames[1])
 
-    for x in xrange(frames[0]):
-        for y in xrange(frames[1]):
+    for x in range(frames[0]):
+        for y in range(frames[1]):
             new.append([Image3D(image.subsurface(x*x_size, y*y_size, x_size, y_size)),
                         duration*0.001])
     return Animation3D(new, pos, rotation, scale, colorize)

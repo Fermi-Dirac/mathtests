@@ -5,9 +5,9 @@ This library (PYGGEL) is licensed under the LGPL by Matthew Roe and PYGGEL contr
 The geometry module contains classes used to render 3d geometric primitives.
 """
 
-from .include import *
-from . import view, data, misc
-from .data import Texture, BlankTexture
+from include import *
+import view, data, misc
+from data import Texture, BlankTexture
 
 
 class Lines(object):
@@ -43,7 +43,7 @@ class Lines(object):
         glBegin(GL_LINES)
         glTexCoord2fv((0,0))
         glVertex3f(*self.start)
-        glTexCoord2fv((1,0o1))
+        glTexCoord2fv((1,01))
         glVertex3f(*self.end)
         glEnd()
         self.display_list.end()
