@@ -10,7 +10,7 @@ from .include import *
 
 from . import view, data, misc
 
-from . import Image as pilImage
+from PIL import Image as pilImage
 
 class Image(object):
     """A 2d image object"""
